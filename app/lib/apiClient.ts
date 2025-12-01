@@ -1,15 +1,15 @@
 /**
- * Cliente API Base para conectar con el backend Express
+ * Cliente API Base para el monolito Next.js
  *
  * Este archivo configura el cliente HTTP que usarán todos los servicios
- * para comunicarse con el backend.
+ * para comunicarse con las API Routes internas de Next.js.
  */
 
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001/api";
+// Ahora usamos las API Routes internas de Next.js (monolito)
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "/api";
 
 /**
- * Realiza una petición HTTP al backend
+ * Realiza una petición HTTP a las API Routes
  */
 export async function apiClient<T>(
   endpoint: string,
