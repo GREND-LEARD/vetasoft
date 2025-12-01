@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🐾 Vetasoft
 
-## Getting Started
+Sistema de gestión veterinaria construido con Next.js 16, React 19 y PostgreSQL (Neon).
 
-First, run the development server:
+## 🚀 Inicio Rápido
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Prerrequisitos
+
+- **Node.js** v18 o superior ([Descargar](https://nodejs.org/))
+- **Git** ([Descargar](https://git-scm.com/))
+- Cuenta en **Neon** para la base de datos ([Crear cuenta gratis](https://neon.tech))
+
+### Pasos para iniciar
+
+1. **Clona el repositorio:**
+   ```bash
+   git clone https://github.com/GREND-LEARD/vetasoft.git
+   cd vetasoft
+   ```
+
+2. **Instala las dependencias:**
+   ```bash
+   npm install
+   ```
+
+3. **Configura las variables de entorno:**
+   
+   Crea un archivo `.env.local` en la raíz del proyecto:
+   ```env
+   NEXT_PUBLIC_API_URL=/api
+   DATABASE_URL=postgresql://tu-usuario:tu-password@tu-host/tu-database?sslmode=require
+   NEXT_PUBLIC_APP_NAME=Vetasoft
+   ```
+   
+   > 📖 Ver [ENV_INSTRUCTIONS.md](./ENV_INSTRUCTIONS.md) para más detalles.
+
+4. **Inicia el servidor de desarrollo:**
+   ```bash
+   npm run dev
+   ```
+
+5. **Abre tu navegador:**
+   - App: [http://localhost:3000](http://localhost:3000)
+   - Health Check: [http://localhost:3000/api/health](http://localhost:3000/api/health)
+
+## 📁 Estructura del Proyecto
+
+```
+vetasoft/
+├── src/
+│   └── app/
+│       ├── api/           # API Routes (endpoints)
+│       │   ├── health/    # Verificación de salud
+│       │   └── users/     # Gestión de usuarios
+│       ├── components/    # Componentes React
+│       ├── contexts/      # React Contexts
+│       ├── hooks/         # Custom Hooks
+│       ├── lib/           # Utilidades y configuración DB
+│       ├── services/      # Servicios de negocio
+│       ├── types/         # Definiciones TypeScript
+│       └── utils/         # Funciones utilitarias
+├── public/                # Archivos estáticos
+├── docker-compose.yml     # Docker para MySQL (opcional)
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Scripts Disponibles
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Comando | Descripción |
+|---------|-------------|
+| `npm run dev` | Inicia el servidor de desarrollo |
+| `npm run build` | Compila la aplicación para producción |
+| `npm run start` | Inicia la aplicación compilada |
+| `npm run lint` | Ejecuta el linter (ESLint) |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🗄️ Base de Datos
 
-## Learn More
+Este proyecto utiliza **Neon** (PostgreSQL serverless). 
 
-To learn more about Next.js, take a look at the following resources:
+### Configuración de Neon:
+1. Crea una cuenta en [neon.tech](https://neon.tech)
+2. Crea un nuevo proyecto
+3. Copia la URL de conexión
+4. Pégala en tu `.env.local` como `DATABASE_URL`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Alternativa: MySQL con Docker
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Si prefieres usar MySQL localmente:
+```bash
+docker-compose up -d
+```
 
-## Deploy on Vercel
+Esto levantará:
+- MySQL en puerto `3306`
+- phpMyAdmin en [http://localhost:8080](http://localhost:8080)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔧 Tecnologías
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Frontend:** Next.js 16, React 19, Tailwind CSS 4
+- **Backend:** Next.js API Routes
+- **Base de datos:** PostgreSQL (Neon) / MySQL (opcional)
+- **Lenguaje:** TypeScript
+
+## ⚠️ Solución de Problemas
+
+### Error: "DATABASE_URL no está configurada"
+→ Asegúrate de crear el archivo `.env.local` con la variable `DATABASE_URL`
+
+### Error: "Cannot connect to database"
+→ Verifica que la URL de conexión sea correcta y que tu IP esté permitida en Neon
+
+### El servidor no inicia
+→ Verifica que el puerto 3000 no esté ocupado:
+```bash
+npx kill-port 3000
+npm run dev
+```
+
+## 📄 Licencia
+
+Proyecto privado - Vetasoft © 2024
