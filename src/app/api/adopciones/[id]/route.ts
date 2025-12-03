@@ -20,12 +20,11 @@ interface RouteParams {
 // ✅ GET - EJEMPLO REFACTORIZADO
 export async function GET(request: NextRequest, { params }: RouteParams) {
   const { id } = await params;
-  //return AdopcionesController.getById(request, id);
+  return AdopcionesController.getById(request, id);
 }
 
-// TODO: Implementa PUT para cambiar estado de la solicitud
-// Ejemplo: estado_id: 1 (Pendiente), 2 (Aprobada), 3 (Rechazada)
-// export async function PUT(request: NextRequest, { params }: RouteParams) {
-//   const { id } = await params;
-//   return AdopcionesController.updateEstado(request, id);
-// }
+export async function PUT(request: NextRequest, { params }: RouteParams) {
+  const { id } = await params;
+  return AdopcionesController.updateEstado(request, id);
+}
+

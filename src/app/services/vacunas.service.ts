@@ -34,4 +34,23 @@ export class VacunasService {
   }
 
   // TODO: Agregar método create para POST
+
+  /**
+   * Obtener una vacuna por ID
+   */
+  static async findById(id: string) {
+    const vacunas = await sql`
+      SELECT 
+        v.*,
+        e.nombre_especie
+      FROM vacunas v
+      LEFT JOIN especies e ON v.especie_id = e.especie_id
+      WHERE v.vacuna_id = ${id}
+    `;
+
+    return vacunas.length > 0 ? vacunas[0] : null;
+  }
+
+  // TODO: Agregar método update(id, data) para PUT
+  // TODO: Agregar método delete(id) para DELETE
 }

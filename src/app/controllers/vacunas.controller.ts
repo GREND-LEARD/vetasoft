@@ -34,4 +34,34 @@ export class VacunasController {
   }
 
   // TODO: Agregar método create para POST
+
+  /**
+   * GET BY ID - Obtener una vacuna específica
+   */
+  static async getById(request: NextRequest, id: string) {
+    try {
+      const vacuna = await VacunasService.findById(id);
+
+      if (!vacuna) {
+        return NextResponse.json(
+          { success: false, error: "Vacuna no encontrada" },
+          { status: 404 }
+        );
+      }
+
+      return NextResponse.json({
+        success: true,
+        data: vacuna,
+      });
+    } catch (error) {
+      console.error("Error fetching vacuna:", error);
+      return NextResponse.json(
+        { success: false, error: "Error al obtener la vacuna" },
+        { status: 500 }
+      );
+    }
+  }
+
+  // TODO: Agregar método update para PUT
+  // TODO: Agregar método delete para DELETE
 }

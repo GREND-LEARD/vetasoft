@@ -16,6 +16,11 @@ export async function GET(request: NextRequest) {
   return AdopcionesController.getAll(request);
 }
 
+export async function POST(request: NextRequest) {
+  return AdopcionesController.create(request);
+}
+
+
 // TODO: Implementa POST siguiendo el mismo patrón:
 // 1. Crear método create() en AdopcionesService (queries SQL)
 // 2. Crear método create() en AdopcionesController (validación + lógica)
@@ -23,6 +28,7 @@ export async function GET(request: NextRequest) {
 // export async function POST(request: NextRequest) {
 //   return AdopcionesController.create(request);
 // }
+
 
 // TODO: Implementa PUT siguiendo el mismo patrón:
 // 1. Crear método updateEstado() en AdopcionesService
