@@ -1,121 +1,37 @@
-# 🐾 Vetasoft
+# 2025-3069140-documentation-vetasoft
+2025-3069140-documentation-vetasoft created by GitHub Classroom
 
-Sistema de gestión veterinaria construido con Next.js 16, React 19 y PostgreSQL (Neon).
+<p align="center"><strong>COMPONENTE METODOLÓGICO</strong></p>
 
-## 🚀 Inicio Rápido
+**Nombre proyecto**
 
-### Prerrequisitos
+Vetasoft ( Sistema de gestión de servicios veterinarios, adopción y donaciones.)
 
-- **Node.js** v18 o superior ([Descargar](https://nodejs.org/))
-- **Git** ([Descargar](https://git-scm.com/))
-- Cuenta en **Neon** para la base de datos ([Crear cuenta gratis](https://neon.tech))
+**Planteamiento de problema**
 
-### Pasos para iniciar
+ - Pregunta problema:
 
-1. **Clona el repositorio:**
-   ```bash
-   git clone https://github.com/GREND-LEARD/vetasoft.git
-   cd vetasoft
-   ```
+¿Cómo puede una solución tecnológica integral mejorar la organización, visibilidad y alcance de los servicios prestados por pequeñas veterinarias en Colombia, incluyendo la gestión médica, comercial y el apoyo social a fundaciones de rescate, con el fin de contribuir a su crecimiento, sostenibilidad e impacto comunitario?
 
-2. **Instala las dependencias:**
-   ```bash
-   npm install
-   ```
+En Colombia, las pequeñas veterinarias enfrentan grandes desafíos para organizar y expandir sus servicios de manera eficiente. La mayoría de estos establecimientos carecen de herramientas digitales integradas que les permitan gestionar sus procesos médicos y comerciales de forma centralizada, lo cual genera retrasos, desorganización interna y pérdida de oportunidades de crecimiento.
 
-3. **Configura las variables de entorno:**
-   
-   Crea un archivo `.env.local` en la raíz del proyecto:
-   ```env
-   NEXT_PUBLIC_API_URL=/api
-   DATABASE_URL=postgresql://tu-usuario:tu-password@tu-host/tu-database?sslmode=require
-   NEXT_PUBLIC_APP_NAME=Vetasoft
-   ```
-   
-   > 📖 Ver [ENV_INSTRUCTIONS.md](./ENV_INSTRUCTIONS.md) para más detalles.
+**Objetivo general**
 
-4. **Inicia el servidor de desarrollo:**
-   ```bash
-   npm run dev
-   ```
+Desarrollar una sistema de información web denominado vetasoft que sirva como apoyo a los servicios generales y de atención médica, agendamiento de citas y promoción de la adopción de animales, para la veterinaria Braquiovet.
 
-5. **Abre tu navegador:**
-   - App: [http://localhost:3000](http://localhost:3000)
-   - Health Check: [http://localhost:3000/api/health](http://localhost:3000/api/health)
+**Objetivos específicos**
 
-## 📁 Estructura del Proyecto
+- Gestionar los Usuarios de la Veterinaria Braquiovet
+- Gestionar los servicios de atención médica de la Veterinaria Braquiovet
+- Gestionar los servicios generales de la Veterinaria Braquiovet
+- Gestionar el agendamiento de citas de la Veterinaria Braquiovet
+- Gestionar el seguimiento a la adopción de Veterinaria Braquiovet
+- Gestionar los Reportes Gráficos e Impresos de la Veterinaria Braquiovet
 
-```
-vetasoft/
-├── src/
-│   └── app/
-│       ├── api/           # API Routes (endpoints)
-│       │   ├── health/    # Verificación de salud
-│       │   └── users/     # Gestión de usuarios
-│       ├── components/    # Componentes React
-│       ├── contexts/      # React Contexts
-│       ├── hooks/         # Custom Hooks
-│       ├── lib/           # Utilidades y configuración DB
-│       ├── services/      # Servicios de negocio
-│       ├── types/         # Definiciones TypeScript
-│       └── utils/         # Funciones utilitarias
-├── public/                # Archivos estáticos
-├── docker-compose.yml     # Docker para MySQL (opcional)
-└── package.json
-```
+**Alcance del proyecto**
 
-## 🛠️ Scripts Disponibles
+El sistema permitirá la gestión de pacientes (mascotas), propietarios, citas médicas y de peluquería, historial clínico, animales en adopción y donaciones. Será utilizado por el personal de la veterinaria Braquiovet y usuarios externos para optimizar los servicios veterinarios y apoyar las actividades de rescate y adopción.
 
-| Comando | Descripción |
-|---------|-------------|
-| `npm run dev` | Inicia el servidor de desarrollo |
-| `npm run build` | Compila la aplicación para producción |
-| `npm run start` | Inicia la aplicación compilada |
-| `npm run lint` | Ejecuta el linter (ESLint) |
+**Justificación**
 
-## 🗄️ Base de Datos
-
-Este proyecto utiliza **Neon** (PostgreSQL serverless). 
-
-### Configuración de Neon:
-1. Crea una cuenta en [neon.tech](https://neon.tech)
-2. Crea un nuevo proyecto
-3. Copia la URL de conexión
-4. Pégala en tu `.env.local` como `DATABASE_URL`
-
-### Alternativa: MySQL con Docker
-
-Si prefieres usar MySQL localmente:
-```bash
-docker-compose up -d
-```
-
-Esto levantará:
-- MySQL en puerto `3306`
-- phpMyAdmin en [http://localhost:8080](http://localhost:8080)
-
-## 🔧 Tecnologías
-
-- **Frontend:** Next.js 16, React 19, Tailwind CSS 4
-- **Backend:** Next.js API Routes
-- **Base de datos:** PostgreSQL (Neon) / MySQL (opcional)
-- **Lenguaje:** TypeScript
-
-## ⚠️ Solución de Problemas
-
-### Error: "DATABASE_URL no está configurada"
-→ Asegúrate de crear el archivo `.env.local` con la variable `DATABASE_URL`
-
-### Error: "Cannot connect to database"
-→ Verifica que la URL de conexión sea correcta y que tu IP esté permitida en Neon
-
-### El servidor no inicia
-→ Verifica que el puerto 3000 no esté ocupado:
-```bash
-npx kill-port 3000
-npm run dev
-```
-
-## 📄 Licencia
-
-Proyecto privado - Vetasoft © 2024
+El proyecto se justifica en la necesidad de ofrecer una solución tecnológica accesible, integral y adaptada a las necesidades reales de este tipo de establecimientos. Al desarrollar una plataforma que centralice todos sus servicios (desde la atención médica hasta la visibilización de animales en adopción y la recepción de donaciones) se busca mejorar significativamente su operatividad, fortalecer su presencia digital y ampliar su rol social en la protección animal.
